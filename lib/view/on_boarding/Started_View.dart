@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fitness_app/view/on_boarding/on_boarding_view.dart';
 import 'package:gap/gap.dart';
 
 import '../../common/colors.dart';
@@ -56,7 +57,17 @@ class _StartedViewState extends State<StartedView> {
                     padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
                     child: RoundButton(title: 'Get Started', 
                     type: isChangeColor ?   RoundButtonType.textGraident : RoundButtonType.bgGradient,
-                    onPressed: () {},)
+                    onPressed: () {
+                      if(isChangeColor) {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => OnBoardingView()));
+                        
+                      } else {
+                        setState(() {
+                          isChangeColor = true;
+                        });
+                      }
+                    }
+                    ),
                   
                 ),
                 ),
