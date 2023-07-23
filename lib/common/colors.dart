@@ -7,7 +7,7 @@ class Tcolor {
   static Color get secondryColor1 => const Color (0xffC58BF2);
   static Color get secondryColor2 => const Color (0xffEEA4CE);
 
-  static List<Color> get PrimaryF => [primaryColor2, primaryColor2];
+  static List<Color> get PrimaryF => [primaryColor2, primaryColor1];
    static List<Color> get scondryyF => [secondryColor1, secondryColor2];
 
    static Color get black => const Color(0xff1D1617);
