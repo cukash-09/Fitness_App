@@ -140,31 +140,82 @@ class _SignupViewState extends State<SignupView> {
                 SizedBox(
                   height: media.width * 0.04,
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: Tcolor.white,
+                          border: Border.all(
+                            width: 1,
+                            color: Tcolor.grey.withOpacity(0.5),
+                          ),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: SvgPicture.asset(
+                          'assets/images/1534129544.svg',
+                          width: 20,
+                          height: 20,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: media.width * 0.10,
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: Tcolor.white,
+                          border: Border.all(
+                            width: 1,
+                            color: Tcolor.grey.withOpacity(0.5),
+                          ),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: SvgPicture.asset(
+                          'assets/images/fecabook.svg',
+                          width: 20,
+                          height: 20,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
                 SizedBox(
                   height: media.width * 0.04,
                 ),
                 TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Already have an account?',
-                          style: TextStyle(
-                            color: Tcolor.black,
-                            fontSize: 14,
-                          ),
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        'Already have an account?',
+                        style: TextStyle(
+                          color: Tcolor.black,
+                          fontSize: 14,
                         ),
-                        Text(
-                          ' Login',
-                          style: TextStyle(
-                            color: Tcolor.black,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700,
-                          ),
+                      ),
+                      Text(
+                        ' Login',
+                        style: TextStyle(
+                          color: Color(0xffEEA4CE),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
                         ),
-                      ],
-                    ))
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
