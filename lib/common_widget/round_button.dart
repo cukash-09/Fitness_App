@@ -23,15 +23,6 @@ class RoundButton extends StatelessWidget {
             colors: Tcolor.PrimaryF,
             begin: Alignment.centerLeft,
             end: Alignment.centerRight),
-        boxShadow: type == RoundButtonType.bgGradient
-            ? [
-                BoxShadow(
-                  color: Colors.black26,
-                  blurRadius: 2,
-                  offset: Offset(0, 2),
-                ),
-              ]
-            : null,
       ),
       child: MaterialButton(
         onPressed: onPressed,

@@ -19,9 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Fitness',
       theme:
           ThemeData(primaryColor: Tcolor.primaryColor1, fontFamily: "Poppins"),
-      home: StartedView (),
+      home: StartedView(),
     );
   }
 }
-
-
