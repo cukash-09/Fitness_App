@@ -27,7 +27,7 @@ class RoundTextfield extends StatelessWidget {
     return Container(
       margin: margin,
       decoration: BoxDecoration(
-        color: Tcolor.lightGray,
+        color: TColor.lightGray,
         borderRadius: BorderRadius.circular(15),
       ),
       child: TextField(
@@ -49,10 +49,10 @@ class RoundTextfield extends StatelessWidget {
               width: 20,
               height: 20,
               fit: BoxFit.contain,
-              color: Tcolor.grey,
+              color: TColor.grey,
             ),
           ),
-          hintStyle: TextStyle(color: Tcolor.grey, fontSize: 12),
+          hintStyle: TextStyle(color: TColor.grey, fontSize: 12),
         ),
       ),
     );

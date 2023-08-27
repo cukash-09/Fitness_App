@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fitness_app/common_widget/round_button.dart';
 import 'package:flutter_fitness_app/common_widget/round_textfield.dart';
-import 'package:flutter_fitness_app/view/loging/complete_profile.dart';
+import 'package:flutter_fitness_app/view/login/complete_profile.dart';
+import 'package:flutter_fitness_app/view/login/login_view.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../common/colors.dart';
@@ -19,7 +20,7 @@ class _SignupViewState extends State<SignupView> {
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Tcolor.white,
+      backgroundColor: TColor.white,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
@@ -30,14 +31,14 @@ class _SignupViewState extends State<SignupView> {
                 Text(
                   'Hey there,',
                   style: TextStyle(
-                    color: Tcolor.grey,
+                    color: TColor.grey,
                     fontSize: 16,
                   ),
                 ),
                 Text(
                   'Create am Account',
                   style: TextStyle(
-                    color: Tcolor.black,
+                    color: TColor.black,
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
                   ),
@@ -74,7 +75,7 @@ class _SignupViewState extends State<SignupView> {
                         width: 20,
                         height: 20,
                         fit: BoxFit.contain,
-                        color: Tcolor.grey,
+                        color: TColor.grey,
                       ),
                     ),
                   ),
@@ -91,7 +92,7 @@ class _SignupViewState extends State<SignupView> {
                         isCheck
                             ? Icons.check_box_outlined
                             : Icons.check_box_outline_blank_outlined,
-                        color: Tcolor.grey,
+                        color: TColor.grey,
                         size: 20,
                       ),
                     ),
@@ -101,7 +102,7 @@ class _SignupViewState extends State<SignupView> {
                         child: Text(
                           'By continuing you accept our Privacy Policy and\n Term of Use',
                           style: TextStyle(
-                            color: Tcolor.grey,
+                            color: TColor.grey,
                             fontSize: 10,
                           ),
                         ),
@@ -116,10 +117,11 @@ class _SignupViewState extends State<SignupView> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Complete_Profile(),
+                        builder: (context) => Login(),
                       ),
                     );
                   },
+                  fontWeight: FontWeight.normal,
                 ),
                 SizedBox(height: media.width * 0.04),
                 Row(
@@ -127,20 +129,20 @@ class _SignupViewState extends State<SignupView> {
                     Expanded(
                       child: Container(
                         height: 1,
-                        color: Tcolor.grey.withOpacity(0.5),
+                        color: TColor.grey.withOpacity(0.5),
                       ),
                     ),
                     Text(
                       '   Or   ',
                       style: TextStyle(
-                        color: Tcolor.black,
+                        color: TColor.black,
                         fontSize: 12,
                       ),
                     ),
                     Expanded(
                       child: Container(
                         height: 1,
-                        color: Tcolor.grey.withOpacity(0.5),
+                        color: TColor.grey.withOpacity(0.5),
                       ),
                     ),
                   ],
@@ -158,10 +160,10 @@ class _SignupViewState extends State<SignupView> {
                         height: 50,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                          color: Tcolor.white,
+                          color: TColor.white,
                           border: Border.all(
                             width: 1,
-                            color: Tcolor.grey.withOpacity(0.5),
+                            color: TColor.grey.withOpacity(0.5),
                           ),
                           borderRadius: BorderRadius.circular(15),
                         ),
@@ -182,10 +184,10 @@ class _SignupViewState extends State<SignupView> {
                         height: 50,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                          color: Tcolor.white,
+                          color: TColor.white,
                           border: Border.all(
                             width: 1,
-                            color: Tcolor.grey.withOpacity(0.5),
+                            color: TColor.grey.withOpacity(0.5),
                           ),
                           borderRadius: BorderRadius.circular(15),
                         ),
@@ -202,14 +204,21 @@ class _SignupViewState extends State<SignupView> {
                   height: media.width * 0.04,
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Login(),
+                      ),
+                    );
+                  },
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
                         'Already have an account?',
                         style: TextStyle(
-                          color: Tcolor.black,
+                          color: TColor.black,
                           fontSize: 14,
                         ),
                       ),

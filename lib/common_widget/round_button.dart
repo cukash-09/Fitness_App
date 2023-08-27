@@ -2,17 +2,23 @@ import 'package:flutter/material.dart';
 
 import '../common/colors.dart';
 
-enum RoundButtonType { bgGradient, textGraident }
+enum RoundButtonType { bgGradient, bgSGradient, textGradient }
 
 class RoundButton extends StatelessWidget {
   final String title;
   final VoidCallback onPressed;
   final RoundButtonType type;
+  final double fontSize;
+  final FontWeight fontWight;
+
   const RoundButton(
       {super.key,
       required this.title,
       this.type = RoundButtonType.bgGradient,
-      required this.onPressed});
+      this.fontSize = 16,
+      this.fontWight = FontWeight.w100,
+      required this.onPressed,
+      required FontWeight fontWeight});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +26,22 @@ class RoundButton extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
         gradient: LinearGradient(
-            colors: Tcolor.PrimaryF,
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight),
+          colors: type == RoundButtonType.bgSGradient
+              ? TColor.secondaryF
+              : TColor.PrimaryF,
+          // begin: Alignment.centerLeft,
+          // end: Alignment.centerRight,
+        ),
+        boxShadow: type == RoundButtonType.bgGradient ||
+                type == RoundButtonType.bgSGradient
+            ? [
+                BoxShadow(
+                  color: Colors.black26,
+                  blurRadius: 0.5,
+                  offset: Offset(0, 0.5),
+                ),
+              ]
+            : null,
       ),
       child: MaterialButton(
         onPressed: onPressed,
@@ -30,26 +49,31 @@ class RoundButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(25),
         ),
-        textColor: Tcolor.primaryColor1,
+        textColor: TColor.primaryColor1,
         minWidth: double.maxFinite,
-        elevation: type == RoundButtonType.bgGradient ? 0 : 1,
-        color: type == RoundButtonType.bgGradient
+        elevation: type == RoundButtonType.bgGradient ||
+                type == RoundButtonType.bgSGradient
+            ? 0
+            : 1,
+        color: type == RoundButtonType.bgGradient ||
+                type == RoundButtonType.bgSGradient
             ? Colors.transparent
-            : Tcolor.white,
-        child: type == RoundButtonType.bgGradient
+            : TColor.white,
+        child: type == RoundButtonType.bgGradient ||
+                type == RoundButtonType.bgSGradient
             ? Text(
                 title,
                 style: TextStyle(
-                  color: Tcolor.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700,
+                  color: TColor.white,
+                  fontSize: fontSize,
+                  fontWeight: fontWight,
                 ),
               )
             : ShaderMask(
                 blendMode: BlendMode.srcIn,
                 shaderCallback: (bounds) {
                   return LinearGradient(
-                          colors: Tcolor.PrimaryF,
+                          colors: TColor.PrimaryF,
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight)
                       .createShader(
@@ -64,9 +88,9 @@ class RoundButton extends StatelessWidget {
                 child: Text(
                   title,
                   style: TextStyle(
-                    color: Tcolor.grey,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
+                    color: TColor.grey,
+                    fontSize: fontSize,
+                    fontWeight: fontWight,
                   ),
                 ),
               ),

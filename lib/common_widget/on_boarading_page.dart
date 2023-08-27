@@ -10,45 +10,43 @@ class OnBoardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     var media = MediaQuery.of(context).size;
+    var media = MediaQuery.of(context).size;
     return SizedBox(
-                width: media.width,
-                height: media.height,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SvgPicture.asset(
-                     pObj["image"].toString(),
-                      width: media.width,
-                      fit: BoxFit.fitWidth,
-                    ),
-                    Gap(25),
-                    
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
-                      child: Text(
-                         pObj["title"].toString(),
-                        style: TextStyle(
-                          color: Tcolor.black,
-                          fontSize: 24,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                    ),
-                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
-                      child: Text(
-                        pObj["subtitle"].toString(),
-                        style: TextStyle(
-                          color: Tcolor.grey,
-                          fontSize: 14,
-                          
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              );
+      width: media.width,
+      height: media.height,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SvgPicture.asset(
+            pObj["image"].toString(),
+            width: media.width,
+            fit: BoxFit.fitWidth,
+          ),
+          Gap(25),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Text(
+              pObj["title"].toString(),
+              style: TextStyle(
+                color: TColor.black,
+                fontSize: 24,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Text(
+              pObj["subtitle"].toString(),
+              style: TextStyle(
+                color: TColor.grey,
+                fontSize: 14,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

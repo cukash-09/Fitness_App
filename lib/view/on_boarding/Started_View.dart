@@ -19,63 +19,67 @@ class _StartedViewState extends State<StartedView> {
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Tcolor.white,
+      backgroundColor: TColor.white,
       body: Container(
-          width: media.width,
-          decoration: BoxDecoration(
-            gradient: isChangeColor
-                ? LinearGradient(
-                    colors: Tcolor.PrimaryF,
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight)
-                : null,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Spacer(),
-              Text(
-                'Fitness',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 36,
-                  fontWeight: FontWeight.w700,
+        width: media.width,
+        decoration: BoxDecoration(
+          gradient: isChangeColor
+              ? LinearGradient(
+                  colors: TColor.PrimaryF,
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                )
+              : null,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Spacer(),
+            Text(
+              'Fitness',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 36,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            Text(
+              'Everybody Can Train',
+              style: TextStyle(
+                color: TColor.grey,
+                fontSize: 18,
+              ),
+            ),
+            Spacer(),
+            SafeArea(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                child: RoundButton(
+                  title: 'Get Started',
+                  type: isChangeColor
+                      ? RoundButtonType.textGradient
+                      : RoundButtonType.bgGradient,
+                  onPressed: () {
+                    if (isChangeColor) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => OnBoardingView(),
+                        ),
+                      );
+                    } else {
+                      setState(() {
+                        isChangeColor = true;
+                      });
+                    }
+                  },
+                  fontWeight: FontWeight.normal,
                 ),
               ),
-              Text(
-                'Everybody Can Train',
-                style: TextStyle(
-                  color: Tcolor.grey,
-                  fontSize: 18,
-                ),
-              ),
-              Spacer(),
-              SafeArea(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-                  child: RoundButton(
-                      title: 'Get Started',
-                      type: isChangeColor
-                          ? RoundButtonType.textGraident
-                          : RoundButtonType.bgGradient,
-                      onPressed: () {
-                        if (isChangeColor) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => OnBoardingView(),
-                            ),
-                          );
-                        } else {
-                          setState(() {
-                            isChangeColor = true;
-                          });
-                        }
-                      }),
-                ),
-              ),
-            ],
-          )),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

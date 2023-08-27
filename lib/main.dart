@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Fitness',
       theme:
-          ThemeData(primaryColor: Tcolor.primaryColor1, fontFamily: "Poppins"),
+          ThemeData(primaryColor: TColor.primaryColor1, fontFamily: "Poppins"),
       home: StartedView(),
     );
   }
